@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
@@ -21,20 +21,67 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 glass"
+      className="
+    fixed
+    top-0
+    left-0
+    right-0
+    z-50
+    bg-[#07070c]/70
+    backdrop-blur-2xl
+    border-b
+    border-white/5
+  "
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-20">
           <motion.a
             href="#home"
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:glow-purple transition-all duration-300">
-              <Code2 className="w-5 h-5 text-primary" />
+            {/* Logo Image */}
+            <div className="relative w-14 h-14 shrink-0 overflow-hidden">
+              <img
+                src="/images/LOGO.png"
+                alt="Aman Logo"
+                className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      object-contain
+      scale-[2.5]
+    "
+              />
             </div>
-            <span className="text-xl font-bold text-gradient">Aman</span>
+
+            {/* Text */}
+            <div className="flex flex-col justify-center leading-[1]">
+              <span
+                className="
+        text-lg
+        md:text-xl
+        font-semibold
+        tracking-[-0.04em]
+        text-white
+      "
+              >
+                Aman
+              </span>
+
+              <span
+                className="
+text-[9px]
+tracking-[0.22em]
+mt-1
+        uppercase
+        text-primary/60
+      "
+              >
+                Digital Atelier
+              </span>
+            </div>
           </motion.a>
 
           {/* Desktop Links */}
@@ -71,29 +118,79 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
+
+        {/* Mobile Menu */}
         <motion.div
-          initial={false}
-          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-          className="md:hidden overflow-hidden"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            y: isOpen ? 0 : -20,
+          }}
+          transition={{ duration: 0.25 }}
+          className={`
+    md:hidden
+    absolute
+    top-full
+    left-0
+    w-full
+    z-[999]
+    px-4
+    pt-3
+    ${isOpen ? "block" : "hidden"}
+  `}
         >
-          <div className="py-4 space-y-4">
-            {navLinks.map((link) => (
+          <div
+            className="
+      rounded-3xl
+      border
+      border-white/10
+      bg-[#07070c]/95
+      backdrop-blur-3xl
+      shadow-[0_20px_80px_rgba(0,0,0,0.65)]
+      overflow-hidden
+    "
+          >
+            {/* Links */}
+            <div className="flex flex-col px-6 py-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="
+            py-4
+            text-lg
+            text-white/75
+            border-b
+            border-white/5
+            hover:text-white
+            transition-all
+          "
+                >
+                  {link.name}
+                </a>
+              ))}
+
+              {/* CTA */}
               <a
-                key={link.name}
-                href={link.href}
+                href="#contact-cta"
                 onClick={() => setIsOpen(false)}
-                className="block text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="
+          mt-6
+          flex
+          items-center
+          justify-center
+          rounded-2xl
+          bg-primary
+          text-white
+          py-4
+          font-semibold
+          shadow-[0_0_40px_rgba(139,92,246,0.35)]
+        "
               >
-                {link.name}
+                Let’s Talk
               </a>
-            ))}
-            <a
-              href="#contact-cta"
-              onClick={() => setIsOpen(false)}
-              className="block px-5 py-2 rounded-lg bg-primary/20 border border-primary/40 text-primary text-center"
-            >
-              Let's Talk
-            </a>
+            </div>
           </div>
         </motion.div>
       </div>

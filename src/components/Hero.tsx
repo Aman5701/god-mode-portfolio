@@ -144,7 +144,7 @@ const Hero = () => {
               View My Work
             </motion.a>
             <motion.a
-              href="#contact"
+              href="#contact-cta"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-xl glass border-primary/30 text-foreground font-semibold text-lg hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"

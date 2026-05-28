@@ -11,6 +11,7 @@ import Expertise from "@/components/Expertise";
 import SignatureProjects from "@/components/signature-showcase/SignatureProjects";
 import Testimonials from "@/components/testimonials/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
           <ProjectsSection />
           <Testimonials />
           <FinalCTA />
+          <BackToTop />
           {/* <ContactSection /> */}
         </main>
         <Footer />
