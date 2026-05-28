@@ -4,13 +4,17 @@ import Hero from "@/components/Hero";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import GrowthSystemsGrid from "@/components/growth-systems/GrowthSystemsGrid";
+// import GrowthStats from "@/components/growth-systems/GrowthStats";
+import About from "@/components/About";
+import Expertise from "@/components/Expertise";
+import SignatureProjects from "@/components/signature-showcase/SignatureProjects";
+import Testimonials from "@/components/testimonials/Testimonials";
+import FinalCTA from "@/components/FinalCTA";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* Neon Strip Accents */}
-      <div className="neon-strip-top" />
-      <div className="neon-strip-bottom" />
       
       {/* Floating Background Orbs */}
       <FloatingOrbs />
@@ -20,8 +24,15 @@ const Index = () => {
         <Navbar />
         <main>
           <Hero />
+          <About />
+          <Expertise />
+          <SignatureProjects />
+          <GrowthSystemsGrid />
+          {/* <GrowthStats /> */}
           <ProjectsSection />
-          <ContactSection />
+          <Testimonials />
+          <FinalCTA />
+          {/* <ContactSection /> */}
         </main>
         <Footer />
       </div>

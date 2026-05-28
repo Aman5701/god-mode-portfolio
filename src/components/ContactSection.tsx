@@ -13,13 +13,13 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 97443 34927",
-    href: "tel:+919744334927",
+    value: "+973 3502 4141 / +91 97443 34927",
+    href: "https://wa.me/97335024141",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Kerala, India",
+    value: "Manama, Bahrain",
     href: null,
   },
 ];
@@ -63,6 +63,8 @@ const ContactSection = () => {
                     {item.href ? (
                       <a
                         href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-lg text-foreground font-medium hover:text-primary transition-colors"
                       >
                         {item.value}

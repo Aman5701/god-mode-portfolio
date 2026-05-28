@@ -22,7 +22,6 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
     >
       <div className="grid md:grid-cols-2 gap-0">
         {/* Project Image */}
-        {/* Project Image */}
         <div className="relative h-64 md:h-auto min-h-[300px] overflow-hidden block">
           <img
             src={project.image}

@@ -4,8 +4,13 @@ import { useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Expertise", href: "#expertise" },
+  { name: "Signature", href: "#signature-projects" },
+  { name: "Systems", href: "#systems" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Testimonials", href: "#testimonials" },
+  // { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -46,7 +51,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
+              href="#contact-cta"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-5 py-2 rounded-lg bg-primary/20 border border-primary/40 text-primary hover:bg-primary/30 hover:glow-purple transition-all duration-300"
@@ -83,7 +88,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="#contact-cta"
               onClick={() => setIsOpen(false)}
               className="block px-5 py-2 rounded-lg bg-primary/20 border border-primary/40 text-primary text-center"
             >
